@@ -1,0 +1,206 @@
+/* === GLOBAL === */
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+body {
+  background: #0b0d10;
+  color: #cfd6df;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* === PAGE TITLE === */
+.page-title {
+  color: #ffe81f;
+  text-align: center;
+  margin: 48px 0 28px;
+  font-size: 2.6rem;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: #000 !important;
+  border-bottom: 1px solid #00bfff55;
+  padding: 12px 0;
+}
+
+.navbar-brand {
+  color: #ffe81f !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.nav-link-btn {
+  color: #cfd6df;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.nav-link-btn:hover {
+  color: #00bfff;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+/* === SEARCH BAR === */
+.search-wrap {
+  width: 180px;
+}
+
+.search-input {
+  background: #12161a;
+  color: #cfd6df;
+  border: 1px solid #2a2f35;
+  font-size: 0.85rem;
+  padding: 5px 8px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #00bfff;
+  box-shadow: 0 0 6px #00bfff88;
+}
+
+/* === FAVORITES DROPDOWN === */
+.dropdown-menu {
+  background: #1a1f24;
+  border: 1px solid #333;
+}
+
+.dropdown-item {
+  color: #cfd6df;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background: #00bfff22;
+  color: white;
+}
+
+/* === CARD LIST SCROLL === */
+.card-list {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding: 12px 0 30px 10px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.card-list::-webkit-scrollbar {
+  height: 8px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #00bfff80;
+  border-radius: 10px;
+}
+
+/* === CARD === */
+.sw-card {
+  background: #1a1f24;
+  border: 1px solid #222;
+  border-radius: 12px;
+  width: 280px;
+  flex: 0 0 280px; /* 👈 evita que se encojan, hace scroll */
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.sw-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 16px #00bfff80;
+}
+
+.sw-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* === CARD BODY === */
+.card-body-fixed {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 12px;
+}
+
+.sw-card h5 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #f0f0f0;
+}
+
+/* === CARD BUTTONS === */
+.card-actions-fixed {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.btn-blue {
+  background: #00bfff;
+  border: none;
+  color: #000;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.btn-blue:hover {
+  box-shadow: 0 0 12px #00bfff;
+}
+
+.btn-star {
+  background: #ffe81f;
+  border: none;
+  font-size: 1rem;
+  padding: 4px 9px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.btn-star:hover {
+  box-shadow: 0 0 12px #ffe81f;
+}
+
+.btn-star.active {
+  background: #ffdf00;
+  box-shadow: 0 0 14px #ffe81f;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  .search-wrap {
+    width: 130px;
+  }
+  .sw-card {
+    width: 230px;
+    flex: 0 0 230px;
+    height: 330px;
+  }
+  .sw-card img {
+    height: 170px;
+  }
+}
